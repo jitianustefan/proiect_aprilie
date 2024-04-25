@@ -1,21 +1,21 @@
-var Db = require('./dboperatii');
+var Db = require('./dboperatii_admin');
 var programari = require('./programari');
 
 //module necesare pentru crearea de API
 var express = require('express');
-var bodyParser = require('body-parser');
-var cors = require('cors');
+//var bodyParser = require('body-parser');
+//var cors = require('cors');
 
-var app = express();
+//var app = express();
 var router = express.Router();
 
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({extended: true}));
+// app.use(bodyParser.json());
 //app.use(cors());
-app.use(cors({
-    origin: 'http://localhost:3000' // Adaugă aici portul pe care rulează aplicația React
-}));
-app.use('/api',router);
+// app.use(cors({
+//     origin: 'http://localhost:3000' // Adaugă aici portul pe care rulează aplicația React
+// }));
+//app.use('/admin',router);
 
 //aici scriu autentificarile
 router.use((request,response, next) => {
@@ -52,8 +52,9 @@ router.route('/programare').post((request,response)=>{
 
 })
 
-var port = process.env.PORT || 8090;
-app.listen(port);
-console.log('Programari API ruleaza pe portul ' + port);
+// var port = process.env.PORT || 8090;
+// app.listen(port);
+// console.log('Progrmul API ruleaza pe portul ' + port);
 
+module.exports = router;
 
