@@ -1,0 +1,108 @@
+/* CSS PENTRU SIDEBAR */
+
+
+.sidebar-components {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    padding-left: 1em;
+    overflow-y: auto;
+}
+
+.sidebar-administrare-items {
+    list-style: none;
+    cursor: pointer;
+    font-weight: 500;
+    padding-left: 0px;
+    font-family: 'Playfair Display';
+}
+.sidebar-administrare-adaug {
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+    padding-left: 2em;
+}
+.sidebar-administrare-adaug:hover {
+    background-color: #d9d9d9;
+    border-radius: 3px;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.sidebar-administrare-edit{
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+    padding-left: 2em;
+}
+
+.sidebar-administrare-edit:hover {
+    background-color: #d9d9d9;
+    border-radius: 3px;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.sidebar-programare-items{
+    list-style: none;
+    cursor: pointer;
+    font-weight: 500;
+    padding-left: 0px;
+    font-family: 'Playfair Display';
+}
+
+.sidebar-programare-adaug{
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+    padding-left: 2em;
+}
+
+.sidebar-programare-adaug:hover {
+    background-color: #d9d9d9;
+    border-radius: 3px;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.sidebar-istoric-items{
+    list-style: none;
+    cursor: pointer;
+    font-weight: 500;
+    padding-left: 0px;
+    font-family: 'Playfair Display';
+}
+
+
+.sidebar-istoric-vezi{
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+    padding-left: 2em;
+}
+
+.sidebar-istoric-vezi:hover {
+    background-color: #d9d9d9;
+    border-radius: 3px;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+/* CSS ICONITE */
+.sidebar-left-icons{
+    margin-right: 1em;
+}
+
+
+.sidebar-icon-arrow-down {
+    visibility: hidden;
+}
+
+.sidebar-adaug-text:hover .sidebar-icon-arrow-down{
+    visibility: visible;
+}
+
+.sidebar-progr-text:hover .sidebar-icon-arrow-down{
+    visibility: visible;
+}
+
+.sidebar-istoric-text:hover .sidebar-icon-arrow-down{
+    visibility: visible;
+}

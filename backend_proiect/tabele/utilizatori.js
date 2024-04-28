@@ -1,5 +1,5 @@
-class Programari{
-    constructor(id_client,id_masina,creatDe,data_inceput,data_sfarsit,stare_programare,actiune_masina,primire_masina,procesare_masina,durata_reparatie,data_creare,data_modifcare){
+class Utilizatori{
+    constructor(id_nume,creatDe,data_inceput,data_sfarsit,stare_programare,actiune_masina,primire_masina,procesare_masina,durata_reparatie,data_creare,data_modifcare){
         this.id_client = id_client;
         this.id_masina = id_masina;
         this.creatDe = creatDe;

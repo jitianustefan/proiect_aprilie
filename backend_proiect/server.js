@@ -5,8 +5,8 @@ var bodyParser = require('body-parser');
 var cors = require('cors');
 
 // Importăm modulele de rute
-const frontRoutes = require('./front');
-const adminRoutes = require('./admin');
+const frontRoutes = require('./single_page/front');
+const adminRoutes = require('./admin/admin');
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());

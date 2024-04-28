@@ -1,0 +1,39 @@
+.page-content{
+    display: flex;
+    min-width: 0;
+    background-color: #f4f4f4;
+    height: 86.7vh;
+}
+
+.sidebar-dashboard{
+    height: 86.7vh;
+    width: 17vw;
+    max-width: 400px;
+    min-width: 180px;
+    margin: 0px 0px;
+    padding-top: 10vh;
+    background-color: #f4f4f4;
+    border-right: 2px solid grey;
+    overflow-y: auto;
+    position: fixed;
+    left: -300px; /* poziție inițială, în afara ecranului */
+    overflow-x: hidden; /* previne orice overflow pe axa X */
+    transition: 1.5s; /* efect de tranziție lin */ 
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.sidebar-dashboard.open {
+    left: 0;
+}
+
+.main-content {
+    background-color: white;
+    margin: 10vh 15vw;
+    border: 2px solid #f4f4f4;
+    transition: 1.5s;
+}
+
+.main-content.open {
+    margin-left: calc(10vh + 350px);
+}

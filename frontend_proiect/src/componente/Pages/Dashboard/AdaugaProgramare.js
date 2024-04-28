@@ -23,7 +23,7 @@ const AdaugaProgramare = () => {
             "procesare_masina": "am reparat tot",
             "durata_reparatie": 110
         }
-        await axios.post(`http://localhost:8090/api/programare`,body)
+        await axios.post(`http://localhost:8090/admin/programare`,body)
             .then(response => console.log('Date trimise cu succes', response))
          .catch(error => console.error('Eroare la trimiterea datelor', error));
     }

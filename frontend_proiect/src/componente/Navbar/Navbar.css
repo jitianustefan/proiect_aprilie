@@ -1,0 +1,114 @@
+
+.navbar-components {
+    list-style: none;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+    background-color: #00b3b3;
+    padding: 2vh 0;
+    min-height: 70px;
+    max-height: 10vh;
+    min-width: 1000px;
+    font-weight: 500;
+    font-size: 25px;
+    z-index: 10;
+    border-bottom: 2px solid #4f4f4f;
+}
+
+.navbar-menu button{
+    margin-left: 2rem;
+    font-size: 30px;
+    border: 0px;
+    background-color: #00b3b3;
+    cursor: pointer;
+    color: black;
+}
+
+.navbar-logo{
+    padding-left: 2rem;
+    color: #00004d;
+    font-size: 30px;
+}
+.navbar-rol{
+    padding-left: 2rem;
+}
+.navbar-firma {
+    flex-grow: 1;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.navbar-greetings {
+    margin-left: auto;
+    margin-right: 2rem;
+}
+ 
+.navbar-avatar{
+    margin-right: 3rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.navbar-avatar-letter{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 35px;
+    font-size: 30px;
+    background-color:#009999;
+    color: white;
+}
+
+.navbar-avatar-letter:hover {
+    box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.5); 
+    background-color: #666; 
+}
+
+.navbar-avatar-dropdown {
+    list-style: none;
+    position: absolute;
+    padding: 0px;
+    margin-top: 7px;
+    max-width: 500px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    right: 0;
+    opacity: 0; /* Inițial invizibil */
+    visibility: hidden; /* Inițial ascuns */
+    transition: visibility 0s 1s, opacity 1s linear; 
+    z-index: 15;
+}
+
+.navbar-avatar:hover .navbar-avatar-dropdown {
+    display: block; 
+    opacity: 1; /* Face dropdown-ul complet opac */
+    visibility: visible; /* Face dropdown-ul vizibil */
+    transition-delay: 0s; /* Nu întârzia la hover */
+}
+
+
+.navbar-avatar-dropdown-email {
+    padding: 3rem 1rem  5rem 3rem;
+    border-bottom: 1px solid black;
+    display: flex;
+}
+.navbar-avatar-dropdown-delog {
+    padding: 2rem 1rem 2rem 1rem;
+    text-align: center;
+    
+}
+
+.navbar-avatar-dropdown-delog:hover{
+    color:#009999;
+}
+
+
+
+
+
+
