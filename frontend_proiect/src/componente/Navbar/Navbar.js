@@ -45,7 +45,7 @@ const Navbar = ({stareLogin, setStareLogin}) =>{
                     <>
                         <div className="navbar-avatar-letter">{prenume[0]}</div>
                         <ul className="navbar-avatar-dropdown">
-                            <li className="navbar-avatar-dropdown-email">{stareLogin ==="true" ? (<><div className="navbar-avatar-letter">{prenume[0]}</div> {email}</>): ""}</li>
+                            <li className="navbar-avatar-dropdown-email">{stareLogin ==="true" ? (<><div className="navbar-avatar-letter">{prenume[0]}</div> &nbsp;{email}</>): ""}</li>
                             <li className="navbar-avatar-dropdown-delog">{stareLogin ==="true" ? (<><div onClick={delogare}>Deconecteaza-te</div></>) : `Conecteaza-te`}</li>
                         </ul>
                     </>) : ""}

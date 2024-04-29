@@ -8,6 +8,7 @@ import { useSidebar } from '../../Sidebar/SidebarContext';
 import AdaugaClient from './AdaugaClient';
 import EditeazaClient from './EditeazaClient';
 import VeziIstoric from './VeziIstoric';
+import EditezMasinaClient from './EditezMasinaClient';
 
 const Dashboard = (stareLogin) => {
     const { isSidebarOpen } = useSidebar();
@@ -33,6 +34,7 @@ const Dashboard = (stareLogin) => {
             <div className={`main-content ${isSidebarOpen ?  'open' : ""} `}>
                 {actiune === "adaugClient" ? <AdaugaClient /> : ""}
                 {actiune === "editezClient" ? <EditeazaClient /> : ""}
+                {actiune === "editezMasinaClient" ? <EditezMasinaClient /> : ""}
                 {actiune === "adaugProgramare" ? <AdaugaProgramare /> : ""}
                 {actiune === "veziIstoric" ? <VeziIstoric /> : ""}
             </div>

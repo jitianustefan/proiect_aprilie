@@ -54,9 +54,12 @@ const Login = ({stareLogin, setStareLogin}) => {
         <div> 
             <div className="container">
             <h2>Bine ai venit<br/>Te rog sa te conectezi</h2>
-            <form onSubmit={login}>
-                <input type="email" placeholder="Email" value={email} onChange={e=> setEmail(e.target.value)}/>
-                <input type="password" placeholder="Parola" value={parola} onChange={e=> setParola(e.target.value)}/>
+            <form className="formular-login" onSubmit={login}>
+                <label for="">Email:</label>
+                <input type="email" id="email" placeholder="Email" value={email} onChange={e=> setEmail(e.target.value)}/>
+                <label for="parola">Parola:</label>
+                <input type="password" id="parola" placeholder="Parola" value={parola} onChange={e=> setParola(e.target.value)}/>
+                <br></br>
                 <input type="submit" value="Conecteaza-te"/>
                 {/* <button onClick={login}>Login</button> */}
             </form>

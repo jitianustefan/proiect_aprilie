@@ -5,8 +5,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-
     background-color: #00b3b3;
     padding: 2vh 0;
     min-height: 70px;
@@ -106,7 +104,6 @@
 .navbar-avatar-dropdown-delog:hover{
     color:#009999;
 }
-
 
 
 

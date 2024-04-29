@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./EditeazaClient.css";
 import axios from "axios";
 
-const EditeazaClient = () => {
+const EditezMasinaClient1 = () => {
     const[criteriu, setCriteriu] = useState("");
     const[numeCautat, setNumeCautat] = useState("");
     const[prenumeCautat, setPrenumeCautat] = useState("");
@@ -10,6 +10,7 @@ const EditeazaClient = () => {
     const[dateClienti, setDateClienti] = useState([]);
     const[dateClientM,setDateClientM] = useState([]);
     const[stareModific, setStareModific] = useState(false);
+    const[stareModificMasina, setStareModificMasina] = useState(false);
     //date client modific
     const[idclient,setIdClient] = useState("");
     const[numeClient, setNumeClient] = useState("");
@@ -59,10 +60,7 @@ const EditeazaClient = () => {
         try {
             console.log("Id Client pe care vreay sa il modifc",id);
             const response_infoC = await axios.get(`http://localhost:8090/admin/cautacl/${id}`);
-            const response_masiniC = await axios.get(`http://localhost:8090/admin/masini/${id}`);
-            console.log("masini client: ",response_masiniC);
             setDateClientM(response_infoC.data[0]);
-            setMasiniClient(response_masiniC.data);
             setStareModific(true);
         }
         catch (err) {
@@ -84,6 +82,28 @@ const EditeazaClient = () => {
         .then(response => console.log('Date trimise cu succes', response))
         .catch(error => console.error('Eroare la trimiterea datelor', error));
 
+    }
+    async function date_masina_by_id(id){
+        try{
+            const response_masiniC = await axios.get(`http://localhost:8090/admin/masini/${id}`);
+            console.log("masini client: ",response_masiniC);
+            setMasiniClient(response_masiniC.data);
+        }
+        catch (err) {
+            console.log('Nu s-au găsit înregistrări sau eroare de server: ' + err.message);
+        }
+    }
+
+    async function modif_masina(id){
+        try {
+            console.log("Id masina pe care vreay sa o modifc",id);
+            const response_infoC = await axios.get(`http://localhost:8090/admin/cautacl/${id}`);
+            setDateClientM(response_infoC.data[0]);
+            setStareModificMasina(true);
+        }
+        catch (err) {
+            console.log('Nu s-au găsit înregistrări sau eroare de server: ' + err.message);
+        }
     }
     return(
         <>
@@ -120,7 +140,7 @@ const EditeazaClient = () => {
         : 
         (
             <div>
-            <h2>EditeazaClient</h2>
+            <h2>Editez Masina Client</h2>
             <h3>Cauta Client</h3>
             <select className="select_cauta" id="criteriu_select" value={criteriu} name="criteriu" onChange={e =>setCriteriu(e.target.value)}>
                 <option value="" disabled hidden>Alege Criteriu Cautare</option>
@@ -142,8 +162,12 @@ const EditeazaClient = () => {
                     <button onClick={cautaTelefon}>Cauta</button>
                 </>
             ) : ""}
-            <table>
-                <thead>
+            {
+            dateClienti.map((dateC) =>{
+                return (
+                    <div>
+                    <table>
+                        <thead>
                             <tr>
                                 <th className="">Nume</th>
                                 <th className="">Prenume</th>
@@ -153,22 +177,48 @@ const EditeazaClient = () => {
                             </tr>
                         </thead>
                         <tbody >
-                            {
-                                dateClienti.map((dateC) =>{
-                                    return (
+                            
                                         <tr>
-                                            <td className="">{dateC["nume"]}</td>
+                                            <td className="" >{dateC["nume"]}</td>
                                             <td className="">{dateC["prenume"]}</td>
                                             <td className="">{dateC["telefon"]}</td>
                                             <td className="">{dateC["email"]}</td>
                                             <td className="">{dateC["status_client"]}</td>
                                             <td className=""><button onClick={() => modif_client(dateC["id_client"])}>Modifica</button></td>
                                         </tr>
-                                    );
-                                })
-                            }
-                </tbody>
-            </table>
+                        </tbody>
+                    </table>
+                    {dateC["id_client"] ? (date_masina_by_id(dateC["id_client"])) : ""}
+                    <h4>Masini Client: {dateC["nume"]}</h4>
+                    {masiniClient.map((masiniCli) =>{
+                            return (
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Nr Inmatriculare</th>
+                                            <th>Serie Sasiu</th>
+                                            <th>Marca</th>
+                                            <th>Model</th>
+                                            <th>Anul Fabricatiei</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>{masiniCli["nr_inmatriculare"]}</td>
+                                            <td>{masiniCli["serie_sasiu"]}</td>
+                                            <td>{masiniCli["marca"]}</td>
+                                            <td>{masiniCli["model"]}</td>
+                                            <td>{masiniCli["anul_fabricatiei"]}</td>
+                                            <td className=""><button onClick={() => modif_masina(masiniCli["id_masina"])}>Modifica</button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            );
+                        })
+                    } 
+                    </div>
+                );
+            })}
             </div>
         )}
         
@@ -177,4 +227,4 @@ const EditeazaClient = () => {
     );
 }
 
-export default EditeazaClient;
+export default EditezMasinaClient1;

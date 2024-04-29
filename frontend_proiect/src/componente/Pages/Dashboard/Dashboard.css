@@ -16,7 +16,7 @@
     border-right: 2px solid grey;
     overflow-y: auto;
     position: fixed;
-    left: -300px; /* poziție inițială, în afara ecranului */
+    left: -400px; /* poziție inițială, în afara ecranului */
     overflow-x: hidden; /* previne orice overflow pe axa X */
     transition: 1.5s; /* efect de tranziție lin */ 
     font-weight: 700;

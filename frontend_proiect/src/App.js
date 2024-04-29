@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-//import AdaugaProgramare from "./componente/Pages/Dashboard/AdaugaProgramare";
 import Login from "./componente/Pages/Login/Login";
 import Navbar from "./componente/Navbar/Navbar";
 import Dashboard from "./componente/Pages/Dashboard/Dashboard";
@@ -16,8 +15,6 @@ const App = () => {
                 <Routes>
                     <Route path='/admin' element={<Login stareLogin = {stareLogin} setStareLogin={setStareLogin}/>} />
                     <Route path='/admin/dashboard' element={<Dashboard stareLogin = {stareLogin}/>} />
-                    {/* <Route path='/profile/:id' element={<Profile />} />
-                    <Route path='/book/:user' element={<BookUser />} /> */}
                 </Routes>
             </BrowserRouter>
         </div>

@@ -23,6 +23,10 @@ const Sidebar = ({actiune, setActiune}) =>{
     function editezClient(){
         setActiune("editezClient");
     }
+
+    function editezMasiniClient(){
+        setActiune("editezMasinaClient")
+    }
     function adaugProgramare() {
         setActiune("adaugProgramare");
     }
@@ -40,6 +44,7 @@ const Sidebar = ({actiune, setActiune}) =>{
                                 <ul className="sidebar-administrare-items">
                                     <li className="sidebar-administrare-adaug" onClick={adaugClient}>Adauga client nou</li>
                                     <li className="sidebar-administrare-edit" onClick={editezClient}>Editeaza date client</li>
+                                    <li className="sidebar-administrare-edit-masini" onClick={editezMasiniClient}>Editeaza masini client</li>
                             </ul>
                             ) : ""}
                         </li>

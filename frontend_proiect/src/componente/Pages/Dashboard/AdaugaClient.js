@@ -10,6 +10,7 @@ const AdaugaClient = () =>{
     const[emailClient, setEmailClient] = useState("");
 
     async function inregclient(){
+       
         const body = {
             "creatDe": sessionStorage.getItem("id_utilizator"),
             "nume":numeClient,

@@ -42,6 +42,19 @@
     font-weight: 600;
 }
 
+.sidebar-administrare-edit-masini {
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+    padding-left: 2em;
+}
+
+.sidebar-administrare-edit-masini:hover {
+    background-color: #d9d9d9;
+    border-radius: 3px;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
 .sidebar-programare-items{
     list-style: none;
     cursor: pointer;
